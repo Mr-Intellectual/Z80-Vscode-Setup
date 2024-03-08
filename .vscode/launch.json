@@ -1,0 +1,89 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "dezog",
+            "request": "launch",
+            "name": "Internal Simulator",
+            "remoteType": "zsim",
+            "zsim": {
+                "visualMemory": true,
+                "memoryModel": "ZX48K",
+                "ulaScreen": true,
+                "zxBorderWidth": 20,
+                "vsyncInterrupt": true,
+                "zxKeyboard": true,
+                "zxBeeper": true
+            },
+            "listFiles": [
+                {
+                    "path": "z80-sample-program.list",
+                    "asm": "sjasmplus",
+                    "mainFile": "main.asm"
+                },
+            ],
+            "history": {
+                "reverseDebugInstructionCount": 1000000,
+                "spotCount": 10,
+                "codeCoverageEnabled": true
+            },
+            "startAutomatically": false,
+            "skipInterrupt": true,
+            "commandsAfterLaunch": [
+                "-logpoint enable",
+                "-assert enable",
+                "-wpmem enable"
+            ],
+            "disassemblerArgs": {
+                "esxdosRst": true
+            },
+            "rootFolder": "${workspaceFolder}",
+            // "topOfStack": "stack_top",
+            "load": "z80-sample-program.sna",
+            "smallValuesMaximum": 513,
+            "tmpDir": ".tmp"
+        },
+        {
+            "type": "dezog",
+            "request": "launch",
+            "name": "ZEsarUX-X",
+            "remoteType": "zrcp",
+            "zrcp": {
+                "hostname": "localhost",
+                "port": 10000,
+                //"socketTimeout": 50
+            },
+            "listFiles": [
+                {
+                    "path": "z80-sample-program.list",
+                    "asm": "sjasmplus",
+                    "mainFile": "main.asm"
+                }
+            ],
+            "history": {
+                "reverseDebugInstructionCount": 1000000,
+                "spotCount": 10,
+            },
+            "startAutomatically": false,
+            "skipInterrupt": true,
+            "commandsAfterLaunch": [
+                "-logpoint enable",
+                "-assert enable",
+                "-wpmem enable",
+                //"-sprites",
+                //"-patterns",
+            ],
+            "disassemblerArgs": {
+                "esxdosRst": true
+            },
+            "rootFolder": "${workspaceFolder}",
+            // "topOfStack": "stack_top",
+            "load": "z80-sample-program.sna",
+            "smallValuesMaximum": 513,
+            "tmpDir": ".tmp"
+        }
+    ]
+}

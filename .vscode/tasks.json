@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Z80 Program",
+            "type": "shell",
+            "command": "sjasmplus",
+            "args": ["--lst=program.lst", "main.asm", "program.bin"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
