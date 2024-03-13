@@ -4,7 +4,7 @@
         {
             "label": "Build Z80 Program",
             "type": "shell",
-            "command": "sjasmplus",
+            "command": "./sjasmplus",
             "args": ["--lst=program.lst", "main.asm", "program.bin"],
             "group": {
                 "kind": "build",
