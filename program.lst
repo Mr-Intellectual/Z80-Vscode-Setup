@@ -1,5 +1,3 @@
-error: opening file: program.bin
-error: opening file: program.bin
 # file opened: main.asm
   1   0000              ;===========================================================================
   2   0000              ; main.asm
@@ -16,7 +14,7 @@ error: opening file: program.bin
  13   0000                  ORG 0x4000
  14   4000 00 00 00...      defs 0x6000 - $    ; move after screen area
  15   6000 00           screen_top: defb    0   ; WPMEMx
- 16   6001
+ 16   6001              Stack_Top:		EQU 0xFFF0
  17   6001
  18   6001              ;===========================================================================
  19   6001              ; Persistent watchpoint.
@@ -1702,4 +1700,3 @@ main.asm(133): warning[sna48]: [SAVESNA] RAM <0x4000-0x4001> will be overwritten
 140   812E                  ENDIF
 141   812E
 # file closed: main.asm
-error: opening file: program.bin
